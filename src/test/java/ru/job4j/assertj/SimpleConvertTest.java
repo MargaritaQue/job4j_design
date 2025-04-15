@@ -27,7 +27,7 @@ class SimpleConvertTest {
         List<String> list = simpleConvert.toList("first", "second", "three", "four", "five");
         assertThat(list).hasSize(5)
                 .containsExactlyInAnyOrder("first", "second", "three", "four", "five")
-                .doesNotContain("un", "deux","trois")
+                .doesNotContain("un", "deux", "trois")
                 .startsWith("first", "second");
         assertThat(list).isNotNull()
                 .anyMatch(e -> e.equals("first"))
@@ -50,7 +50,7 @@ class SimpleConvertTest {
         assertThat(set).hasSize(5)
                 .contains("second")
                 .containsAnyOf("zero", "second", "six")
-                .doesNotContain("un", "deux","trois");
+                .doesNotContain("un", "deux", "trois");
     }
 
     @Test
