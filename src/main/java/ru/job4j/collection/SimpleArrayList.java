@@ -57,7 +57,7 @@ public class SimpleArrayList<T> implements SimpleList<T> {
         return size;
     }
 
-    public T[] increase(T[] container) {
+    private T[] increase(T[] container) {
         T[] c = (T[]) new Object[container.length * 2 + 1];
         for (int i = 0; i < container.length; i++) {
             c[i] = container[i];
