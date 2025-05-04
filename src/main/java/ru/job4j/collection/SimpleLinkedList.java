@@ -44,6 +44,9 @@ public class SimpleLinkedList<E> implements SimpleLinked<E> {
 
             @Override
             public boolean hasNext() {
+                if (modCount != c) {
+                    throw new ConcurrentModificationException();
+                }
                 return current != null;
             }
 
