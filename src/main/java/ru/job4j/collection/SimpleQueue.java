@@ -11,18 +11,18 @@ public class SimpleQueue<T> {
         if (size == 0) {
             throw new NoSuchElementException("Queue is empty");
         }
-        int s = size;
+        int sizeReserve = size;
         while (size != 1) {
             output.push(input.pop());
             size--;
         }
-        T x = input.pop();
-        while (s != size) {
+        T last = input.pop();
+        while (sizeReserve != size) {
             input.push(output.pop());
             size++;
         }
         size--;
-        return x;
+        return last;
     }
 
     public void push(T value) {
