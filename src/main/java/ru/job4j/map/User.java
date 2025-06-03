@@ -40,6 +40,8 @@ public class User {
         System.out.println();
         System.out.printf("user2 - хэшкод: %s, хэш: %s, бакет: %s",
                 hashCode2, hash2, bucket2);
+        System.out.println();
+        System.out.println(userMap);
     }
 
     @Override
@@ -52,5 +54,19 @@ public class User {
         }
         User user = (User) o;
         return children == user.children && Objects.equals(name, user.name) && Objects.equals(birthday, user.birthday);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, children, birthday);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", children=" + children +
+                ", birthday=" + birthday.getTime() +
+                '}';
     }
 }
