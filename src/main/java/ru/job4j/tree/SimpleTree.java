@@ -14,9 +14,9 @@ public class SimpleTree<E> implements Tree<E> {
         if (findBy(child).isPresent()) {
             return false;
         }
-        Optional<Node<E>> x = findBy(parent);
-        if (x.isPresent()) {
-            x.get().children.add(new Node<>(child));
+        Optional<Node<E>> parentNode = findBy(parent);
+        if (parentNode.isPresent()) {
+            parentNode.get().children.add(new Node<>(child));
             return true;
         }
         return false;
@@ -36,5 +36,10 @@ public class SimpleTree<E> implements Tree<E> {
             data.addAll(element.children);
         }
         return result;
+    }
+
+    public boolean isBinary() {
+
+        return false;
     }
 }
