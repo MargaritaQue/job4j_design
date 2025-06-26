@@ -3,7 +3,6 @@ package ru.job4j.io;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.*;
 
-
 class ConfigTest {
 
     @Test
