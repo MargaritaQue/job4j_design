@@ -37,4 +37,12 @@ class ConfigTest {
         assertThatThrownBy(config::load)
                 .isInstanceOf(IllegalArgumentException.class).hasMessageContaining("breaking the pattern");
     }
+
+    @Test
+    void whenPairWithEx2() {
+        String path = "./data/pair_with_mistakes3.properties";
+        Config config = new Config(path);
+        assertThatThrownBy(config::load)
+                .isInstanceOf(IllegalArgumentException.class).hasMessageContaining("breaking the pattern");
+    }
 }
