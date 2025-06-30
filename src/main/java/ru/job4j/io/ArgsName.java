@@ -8,16 +8,37 @@ public class ArgsName {
     private final Map<String, String> values = new HashMap<>();
 
     public String get(String key) {
-        /* TODO add the necessary checks. */
+        if (values.get(key) == null) {
+            throw new IllegalArgumentException("This key: 'Xms' is missing");
+        }
         return values.get(key);
     }
 
     private void parse(String[] args) {
-        /* TODO parse args to values. */
+        for (String arg : args) {
+            if (!arg.contains("=")) {
+                throw new IllegalArgumentException(String.format("Error: This argument '%s' does not contain an equal sign", arg));
+            }
+            String[] ar = arg.split("=", 2);
+            if (!ar[0].startsWith("-")) {
+                throw new IllegalArgumentException(String.format("Error: This argument '%s' does not start with a '-' character", arg));
+            }
+            String key = ar[0].substring(1);
+            String val = ar[1];
+            if (key.isBlank()) {
+                throw new IllegalArgumentException(String.format("Error: This argument '%s' does not contain a key", arg));
+            }
+            if (val.isBlank()) {
+                throw new IllegalArgumentException(String.format("Error: This argument '%s' does not contain a value", arg));
+            }
+            values.put(key, val);
+        }
     }
 
     public static ArgsName of(String[] args) {
-        /* TODO add the necessary checks. */
+        if (args.length == 0) {
+            throw new IllegalArgumentException("Arguments not passed to program");
+        }
         ArgsName names = new ArgsName();
         names.parse(args);
         return names;
