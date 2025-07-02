@@ -27,7 +27,6 @@ public class EchoServer {
                             }
                             case ("/?msg=Exit") ->
                                 server.close();
-
                             default -> {
                                 output.write("HTTP/1.1 200 OK\r\n\r\n".getBytes());
                                 output.write(line.split("=")[1].getBytes());
