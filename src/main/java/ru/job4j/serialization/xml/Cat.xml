@@ -1,0 +1,7 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<cat sex="false" age="1" name="Tolya">
+    <statuses>
+        <status>Vaccinated</status>
+        <status>Sterilized</status>
+    </statuses>
+</cat>
