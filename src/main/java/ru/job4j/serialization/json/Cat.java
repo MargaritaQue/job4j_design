@@ -6,7 +6,6 @@ import com.google.gson.GsonBuilder;
 import java.util.Arrays;
 
 public class Cat {
-
     private final boolean sex;
     private final int age;
     private final String name;
