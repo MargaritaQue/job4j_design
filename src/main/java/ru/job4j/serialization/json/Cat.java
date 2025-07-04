@@ -2,8 +2,12 @@ package ru.job4j.serialization.json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Cat {
 
@@ -17,6 +21,22 @@ public class Cat {
         this.age = age;
         this.name = name;
         this.statuses = statuses;
+    }
+
+    public boolean getSex() {
+        return sex;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String[] getStatuses() {
+        return statuses;
     }
 
     @Override
@@ -47,5 +67,20 @@ public class Cat {
 
         final Cat catMod = gson.fromJson(catJson, Cat.class);
         System.out.println(catMod);
+
+        List<String> list = new ArrayList<>();
+        list.add("Vaccinated");
+        list.add("Sterilized");
+        JSONArray jsonStatuses = new JSONArray(list);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("sex", cat.getSex());
+        jsonObject.put("age", cat.getAge());
+        jsonObject.put("name", cat.getName());
+        jsonObject.put("statuses", jsonStatuses);
+
+        System.out.println(jsonObject.toString());
+
+        System.out.println(new JSONObject(cat).toString());
+
     }
 }
