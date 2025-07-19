@@ -8,20 +8,20 @@ insert into commentss(name) values ('Требование провести те�
 insert into attachs(name) values ('error_screenshot.png');
 insert into attachs(name) values ('log.txt');
 
-insert into items(name, commentss_id, attachs_id) values ('Техническая проблема', 1, 1);
-insert into items(name, commentss_id, attachs_id) values ('Запрос на обслуживание', 2, 2);
+insert into roles(name) VALUES ('Администратор системы');
+insert into roles(name) VALUES ('	Специалист поддержки');
+
+insert into users(name, roles_id) values ('Ivan', 1);
+insert into users(name, roles_id) values ('Alex', 2);
+
+insert into items(name, commentss_id, attachs_id, users_id) values ('Техническая проблема', 1, 1, 1);
+insert into items(name, commentss_id, attachs_id, users_id) values ('Запрос на обслуживание', 2, 2, 2);
 
 insert into states(name, items_id) values ('В работе', 1);
 insert into states(name, items_id) values ('Закрыта', 2);
 
 insert into categories(name, items_id) values ('IT Support', 1);
 insert into categories(name, items_id) values ('IT Support', 2);
-
-insert into users(name, items_id) values ('Ivan', 1);
-insert into users(name, items_id) values ('Alex', 2);
-
-insert into roles(name, users_id) VALUES ('Администратор системы', 1);
-insert into roles(name, users_id) VALUES ('	Специалист поддержки', 2);
 
 insert into roles_rules(roles_id, rules_id) values (1, 1);
 insert into roles_rules(roles_id, rules_id) values (1, 2);
