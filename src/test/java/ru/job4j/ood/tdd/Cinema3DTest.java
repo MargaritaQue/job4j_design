@@ -88,8 +88,4 @@ public class Cinema3DTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("Нельзя покупать билеты на прошедшие даты");
     }
-
-
-
-
 }
