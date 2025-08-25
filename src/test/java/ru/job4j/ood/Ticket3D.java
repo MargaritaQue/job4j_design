@@ -1,4 +1,4 @@
-package ru.job4j.ood.tdd;
+package ru.job4j.ood;
 
 public class Ticket3D {
 }

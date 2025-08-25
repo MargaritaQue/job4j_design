@@ -1,7 +1,9 @@
-package ru.job4j.ood.tdd;
+package ru.job4j.ood;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import ru.job4j.ood.tdd.*;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -25,7 +27,7 @@ public class Cinema3DTest {
         Session session = new Session3D();
         cinema.add(session);
         List<Session> sessions = cinema.find(data -> true);
-        assertThat(sessions).contains(session);
+        Assertions.assertThat(sessions).contains(session);
     }
 
     @Test
