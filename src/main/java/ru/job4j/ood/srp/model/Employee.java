@@ -1,13 +1,29 @@
 package ru.job4j.ood.srp.model;
 
+import com.google.gson.annotations.JsonAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import java.util.Calendar;
 import java.util.Objects;
 
+@XmlRootElement(name = "employees")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Employee {
+
     private String name;
+    @XmlJavaTypeAdapter(CalendarAdapterXML.class)
+    @JsonAdapter(CalendarAdapter.class)
     private Calendar hired;
+    @XmlJavaTypeAdapter(CalendarAdapterXML.class)
+    @JsonAdapter(CalendarAdapter.class)
     private Calendar fired;
     private double salary;
+
+    public Employee() {
+    }
 
     public Employee(String name, Calendar hired, Calendar fired, double salary) {
         this.name = name;

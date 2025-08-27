@@ -21,4 +21,9 @@ public class MemoryStore implements Store {
                 .filter(filter)
                 .collect(Collectors.toList());
     }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
 }
