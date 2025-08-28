@@ -1,4 +1,4 @@
-package ru.job4j.ood.lsp;
+package ru.job4j.ood.lsp.l;
 
 class Employee {
     public double getSalary() {
