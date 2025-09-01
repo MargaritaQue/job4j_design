@@ -1,20 +1,13 @@
 package ru.job4j.ood.lsp;
 
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractStore implements Store {
-    List<Food> foods = new ArrayList<>();
-
-    public static double productExpirationDate(Food food) {
-        LocalDate expiryDate = food.getExpiryDate();
-        LocalDate createDate = food.getCreateDate();
-        long shelfLifeInDays = ChronoUnit.DAYS.between(createDate, expiryDate);
-        long daysHavePassed = ChronoUnit.DAYS.between(createDate, LocalDate.now());
-        return 100d * daysHavePassed / shelfLifeInDays;
-    }
+    private final List<Food> foods = new ArrayList<>();
+    protected static final int CONSTANT_25 = 25;
+    protected static final int CONSTANT_75 = 75;
+    protected static final int CONSTANT_100 = 100;
 
     @Override
     public void add(Food food) {

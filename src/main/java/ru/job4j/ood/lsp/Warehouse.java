@@ -4,6 +4,6 @@ public class Warehouse extends AbstractStore {
 
     @Override
     public boolean accept(Food food) {
-        return productExpirationDate(food) <= 24;
+        return Expiration.productExpirationDate(food) < CONSTANT_25;
     }
 }

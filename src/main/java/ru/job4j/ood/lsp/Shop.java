@@ -4,9 +4,9 @@ public class Shop extends AbstractStore {
 
     @Override
     public boolean accept(Food food) {
-        if (productExpirationDate(food) >= 25 && productExpirationDate(food) <= 75) {
+        if (Expiration.productExpirationDate(food) >= CONSTANT_25 && Expiration.productExpirationDate(food) <= CONSTANT_75) {
             return true;
-        } else if (productExpirationDate(food) >= 76 && productExpirationDate(food) <= 99) {
+        } else if (Expiration.productExpirationDate(food) > CONSTANT_75 && Expiration.productExpirationDate(food) < CONSTANT_100) {
             food.setPrice(food.getPrice() * (1.0 - food.getDiscount()));
             return true;
         }
