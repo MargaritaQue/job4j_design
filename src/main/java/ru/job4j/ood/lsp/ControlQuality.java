@@ -3,7 +3,7 @@ package ru.job4j.ood.lsp;
 import java.util.List;
 
 public class ControlQuality {
-    List<Store> stores;
+    private List<Store> stores;
 
     public ControlQuality(List<Store> stores) {
         this.stores = stores;
