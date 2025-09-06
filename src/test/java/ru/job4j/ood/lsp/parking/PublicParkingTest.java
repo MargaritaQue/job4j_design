@@ -54,7 +54,7 @@ class PublicParkingTest {
         PublicParking park = new PublicParking(1, 3);
         Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
-        Car carT2 = new Truck(3,"a444dd");
+        Car carT2 = new Truck(3, "a444dd");
         park.add(carL);
         park.add(carT);
         assertThrows(IllegalStateException.class, () -> {

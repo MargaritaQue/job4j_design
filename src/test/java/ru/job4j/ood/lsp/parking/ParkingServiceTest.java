@@ -31,7 +31,7 @@ class ParkingServiceTest {
         park.add(carL);
         park.add(carT);
         ParkingService service = new ParkingService(park);
-        assertTrue(service.park(new Truck(2,"s122hh")));
+        assertTrue(service.park(new Truck(2, "s122hh")));
         assertEquals(0, service.freeLots());
     }
 
