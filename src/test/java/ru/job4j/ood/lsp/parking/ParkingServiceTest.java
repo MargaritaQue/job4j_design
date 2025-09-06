@@ -14,7 +14,7 @@ class ParkingServiceTest {
     @Test
     void parkTrue() {
         PublicParking park = new PublicParking(3, 3);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
         park.add(carL);
         park.add(carT);
@@ -26,7 +26,7 @@ class ParkingServiceTest {
     @Test
     void parkTruckTrue() {
         PublicParking park = new PublicParking(3, 1);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
         park.add(carL);
         park.add(carT);
@@ -38,7 +38,7 @@ class ParkingServiceTest {
     @Test
     void parkFalse() {
         PublicParking park = new PublicParking(1, 3);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
         park.add(carL);
         park.add(carT);
@@ -50,7 +50,7 @@ class ParkingServiceTest {
     @Test
     void unparkTrue() {
         PublicParking park = new PublicParking(3, 4);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
         park.add(carL);
         park.add(carT);
@@ -62,7 +62,7 @@ class ParkingServiceTest {
     @Test
     void unparkFalse() {
         PublicParking park = new PublicParking(3, 4);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
         park.add(carL);
         park.add(carT);
@@ -75,7 +75,7 @@ class ParkingServiceTest {
     @Test
     void checkTrue() {
         PublicParking park = new PublicParking(3, 4);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
         park.add(carL);
         park.add(carT);
@@ -86,7 +86,7 @@ class ParkingServiceTest {
     @Test
     void checkFalse() {
         PublicParking park = new PublicParking(3, 4);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
         park.add(carL);
         park.add(carT);
@@ -97,7 +97,7 @@ class ParkingServiceTest {
     @Test
     void freeLots() {
         PublicParking park = new PublicParking(3, 4);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
         park.add(carL);
         park.add(carT);
@@ -109,7 +109,7 @@ class ParkingServiceTest {
     @Test
     void report() {
         PublicParking park = new PublicParking(3, 4);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
         park.add(carL);
         park.add(carT);

@@ -16,7 +16,7 @@ class PublicParkingTest {
     @Test
     void add() {
         PublicParking park = new PublicParking(3, 3);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
         park.add(carL);
         park.add(carT);
@@ -39,9 +39,9 @@ class PublicParkingTest {
     @Test
     void addNoVacanciesForPassengerCar() {
         PublicParking park = new PublicParking(1, 3);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
-        Car carL2 = new PassengerCar( "a444dd");
+        Car carL2 = new PassengerCar("a444dd");
         park.add(carL);
         park.add(carT);
         assertThrows(IllegalStateException.class, () -> {
@@ -52,9 +52,9 @@ class PublicParkingTest {
     @Test
     void addNoVacanciesForTruck() {
         PublicParking park = new PublicParking(1, 3);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
-        Car carT2 = new Truck( 3,"a444dd");
+        Car carT2 = new Truck(3,"a444dd");
         park.add(carL);
         park.add(carT);
         assertThrows(IllegalStateException.class, () -> {
@@ -65,7 +65,7 @@ class PublicParkingTest {
     @Test
     void delete() {
         PublicParking park = new PublicParking(3, 3);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
         park.add(carL);
         park.delete(carT);
@@ -78,7 +78,7 @@ class PublicParkingTest {
     @Test
     void deleteException() {
         PublicParking park = new PublicParking(3, 3);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
         park.add(carL);
         park.add(carT);
@@ -90,7 +90,7 @@ class PublicParkingTest {
     @Test
     void getByNumber() {
         PublicParking park = new PublicParking(3, 3);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
         park.add(carL);
         park.add(carT);
@@ -100,7 +100,7 @@ class PublicParkingTest {
     @Test
     void getByNumberException() {
         PublicParking park = new PublicParking(3, 3);
-        Car carL = new PassengerCar( "a321dd");
+        Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
         park.add(carL);
         park.add(carT);
