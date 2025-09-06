@@ -1,5 +1,7 @@
 package ru.job4j.ood.lsp.parking;
 
+import java.util.List;
+
 public class ParkingService {
     private final Parking park;
 
@@ -21,5 +23,9 @@ public class ParkingService {
 
     public int freeLots() {
         return 0;
+    }
+
+    public List<Car> report() {
+        return park.getParkingLot();
     }
 }
