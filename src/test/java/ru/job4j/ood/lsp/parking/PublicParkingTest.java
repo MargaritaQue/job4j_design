@@ -59,7 +59,6 @@ class PublicParkingTest {
         assertFalse(park.occupyPassengerPlaces(count));
     }
 
-
     @Test
     void delete() {
         PublicParking park = new PublicParking(3, 3);
