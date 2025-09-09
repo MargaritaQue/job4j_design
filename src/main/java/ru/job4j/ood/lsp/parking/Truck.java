@@ -7,6 +7,6 @@ public class Truck extends Car {
 
     @Override
     boolean valid(int size) {
-        return false;
+        return size > 1;
     }
 }

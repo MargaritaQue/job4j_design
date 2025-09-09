@@ -1,14 +1,11 @@
 package ru.job4j.ood.lsp.parking;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Disabled
 class ParkingServiceTest {
 
     @Test
@@ -16,9 +13,9 @@ class ParkingServiceTest {
         PublicParking park = new PublicParking(3, 3);
         Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
-        park.add(carL);
-        park.add(carT);
         ParkingService service = new ParkingService(park);
+        service.park(carL);
+        service.park(carT);
         assertTrue(service.park(new PassengerCar("s122hh")));
         assertEquals(3, service.freeLots());
     }
@@ -28,9 +25,9 @@ class ParkingServiceTest {
         PublicParking park = new PublicParking(3, 1);
         Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
-        park.add(carL);
-        park.add(carT);
         ParkingService service = new ParkingService(park);
+        service.park(carL);
+        service.park(carT);
         assertTrue(service.park(new Truck(2, "s122hh")));
         assertEquals(0, service.freeLots());
     }
@@ -40,9 +37,9 @@ class ParkingServiceTest {
         PublicParking park = new PublicParking(1, 3);
         Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
-        park.add(carL);
-        park.add(carT);
         ParkingService service = new ParkingService(park);
+        service.park(carL);
+        service.park(carT);
         assertFalse(service.park(new PassengerCar("s122hh")));
         assertEquals(2, service.freeLots());
     }
@@ -52,9 +49,9 @@ class ParkingServiceTest {
         PublicParking park = new PublicParking(3, 4);
         Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
-        park.add(carL);
-        park.add(carT);
         ParkingService service = new ParkingService(park);
+        service.park(carL);
+        service.park(carT);
         assertEquals(carL, service.unpark("a321dd"));
         assertEquals(6, service.freeLots());
     }
@@ -64,10 +61,10 @@ class ParkingServiceTest {
         PublicParking park = new PublicParking(3, 4);
         Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
-        park.add(carL);
-        park.add(carT);
         ParkingService service = new ParkingService(park);
-        assertThrows(NoSuchElementException.class, () -> {
+        service.park(carL);
+        service.park(carT);
+        assertThrows(IllegalArgumentException.class, () -> {
             service.unpark("f444ggh");
         });
     }
@@ -77,9 +74,9 @@ class ParkingServiceTest {
         PublicParking park = new PublicParking(3, 4);
         Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
-        park.add(carL);
-        park.add(carT);
         ParkingService service = new ParkingService(park);
+        service.park(carL);
+        service.park(carT);
         assertTrue(service.check("a321dd"));
     }
 
@@ -88,9 +85,9 @@ class ParkingServiceTest {
         PublicParking park = new PublicParking(3, 4);
         Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
-        park.add(carL);
-        park.add(carT);
         ParkingService service = new ParkingService(park);
+        service.park(carL);
+        service.park(carT);
         assertFalse(service.check("a333ff"));
     }
 
@@ -99,9 +96,9 @@ class ParkingServiceTest {
         PublicParking park = new PublicParking(3, 4);
         Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
-        park.add(carL);
-        park.add(carT);
         ParkingService service = new ParkingService(park);
+        service.park(carL);
+        service.park(carT);
         int expectedLots = 5;
         assertEquals(expectedLots, service.freeLots());
     }
@@ -111,12 +108,12 @@ class ParkingServiceTest {
         PublicParking park = new PublicParking(3, 4);
         Car carL = new PassengerCar("a321dd");
         Car carT = new Truck(3, "v123vv");
-        park.add(carL);
-        park.add(carT);
         ParkingService service = new ParkingService(park);
+        service.park(carL);
+        service.park(carT);
         List<Car> expectedCars = List.of(
-                new PassengerCar("a321dd"),
-                new Truck(3, "v123vv")
+                carL,
+                carT
         );
         assertEquals(expectedCars, service.report());
     }

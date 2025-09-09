@@ -12,4 +12,13 @@ public interface Parking {
 
     List<Car> getParkingLot();
 
+    boolean occupyPassengerPlaces(int count);
+
+    boolean occupyTruckPlaces(int count);
+
+    void plusSizeP(int count);
+
+    void plusSizeT(int count);
+
+    int freeLots();
 }
