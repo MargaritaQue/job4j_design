@@ -31,4 +31,5 @@ public class ControlQuality {
             control(food);
         }
     }
+
 }
