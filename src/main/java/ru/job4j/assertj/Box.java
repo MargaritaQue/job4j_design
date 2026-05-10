@@ -14,7 +14,7 @@ public class Box {
 
     private void init() {
         type = switch (vertex) {
-            case 0 -> "Sphere";
+            case 0 -> "Spheree";
             case 4 -> "Tetrahedron";
             case 8 -> "Cube";
             default -> UNKNOWN;
